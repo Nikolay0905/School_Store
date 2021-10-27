@@ -1,22 +1,12 @@
 public class Pancakes {
-    private String ingridients;
+    private ArrayList<Pancakes> pancakes = new ArrayList<>();
     private float initialPrice;
     private int stock;
 
 
-    public Pancakes(String ingridients, float initialPrice, int stock){
-        this.ingridients = ingridients;
+    public Pancakes(float initialPrice, int stock){
         this.initialPrice = initialPrice;
         this.stock = stock;
-    }
-
-
-    public String getIngridients() {
-        return ingridients;
-    }
-
-    public void setIngridients(String ingridients) {
-        this.ingridients = ingridients;
     }
 
     public float getInitialPrice() {
