@@ -1,5 +1,5 @@
 public class Pancakes {
-    private ArrayList<Pancakes> pancakes = new ArrayList<>();
+    private ArrayList<Pancakes> ingridients = new ArrayList<>();
     private float initialPrice;
     private int stock;
 
