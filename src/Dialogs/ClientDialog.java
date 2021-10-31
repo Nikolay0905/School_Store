@@ -50,7 +50,8 @@ public class ClientDialog {
             PizzaDialog dialog = new PizzaDialog();
             dialog.choosePizza();
         }else if(order.equalsIgnoreCase("Палачинки")){
-            //to do
+            PancakesDialog dialog = new PancakesDialog();
+            dialog.choosePancake();
         }else{
             System.out.println("Съжаляваме, но не предлагаме този продукт.");
         }
