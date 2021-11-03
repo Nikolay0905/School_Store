@@ -2,6 +2,7 @@ package Dialogs;
 
 import menuItems.Pancakes;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class PancakesDialog{
@@ -18,8 +19,6 @@ public class PancakesDialog{
         System.out.println();
         System.out.println("Моля изберете топинги : ");
         String type = scan.nextLine();
-//        Pancakes toppings = new Pancakes();
-//        toppings.printTopings();
-        System.out.println("Избраните от Вас топинги са : " + type);
+        System.out.println("Избраните от Вас топинги са : " + "[" + type + "]");
     }
 }
