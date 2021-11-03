@@ -11,6 +11,13 @@ public class Pizza extends Product {
 
     public Pizza(String size){
         //Add basic ingredients
+        switch (size) {
+            case "Mалка" -> price += 0.5;
+            case "Средна" -> price += 1.5;
+            case "Голяма" -> price += 2.5;
+            default -> {
+            }
+        }
         ingridients.add("Тесто");
         ingridients.add("Сос");
         initialPrice = 3.00F;
@@ -46,12 +53,29 @@ public class Pizza extends Product {
 
     }
 
-    public void printTopings(){
+    public void printToppings(){
         for (HashMap<String, Float> map: toppings){
             for (Map.Entry<String, Float> entry : map.entrySet()) {
                 System.out.println(entry.getKey()+"  цена: "+entry.getValue() + "лв.");
             }
             System.out.println("---------");
         }
+    }
+
+    public float choseToppings(String [] chosenToppings){
+        for (int i = 0; i < chosenToppings.length; i++) {
+            String [] items = chosenToppings[i].split(" ");
+            for (String curItem:items) {
+                curItem = curItem.substring(0,1).toUpperCase() +
+                        curItem.substring(1).toLowerCase();
+                if (toppings.get(i).containsKey(curItem)){
+                    price+=toppings.get(i).get(curItem);
+                }else {
+                    price += 0;
+                }
+            }
+        }
+        price += initialPrice;
+        return price;
     }
 }
