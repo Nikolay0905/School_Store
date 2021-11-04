@@ -5,13 +5,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Pancakes extends Product{
-    public String type;
+//    public String type;
     ArrayList<HashMap<String, Float>> toppings = new ArrayList<>();
 
  public Pancakes() {
      ingridients.add("Палачинка");
      initialPrice = 2.00F;
-     this.type = type;
+//     this.type = this.type;
      Toppings();
  }
 
@@ -46,6 +46,22 @@ public class Pancakes extends Product{
             }
             System.out.println("---------");
         }
+    }
+    public float chooseToppings(String [] chоsenToppings){
+        for (int i = 0; i < chоsenToppings.length; i++) {
+            String [] items = chоsenToppings[i].split(" ");
+            for (String curItem:items) {
+                curItem = curItem.substring(0,1).toUpperCase() +
+                        curItem.substring(1).toLowerCase();
+                if (toppings.get(i).containsKey(curItem)){
+                    price+=toppings.get(i).get(curItem);
+                }else {
+                    price += 0;
+                }
+            }
+        }
+        price += initialPrice;
+        return price;
     }
 
  }
