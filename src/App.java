@@ -14,9 +14,8 @@ public class App {
         if (role.equalsIgnoreCase("Клиент")) {
             ClientDialog dialog = new ClientDialog();
             dialog.chooseLocation();
-            dialog.chooseProduct();
         }
-        System.out.println("Довиждане!");
+
       }
     }
 
