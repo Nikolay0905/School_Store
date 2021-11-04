@@ -6,11 +6,32 @@ import java.util.Scanner;
 public class ClientDialog {
     public Scanner scan = new Scanner(System.in);
 
+    public void chooseProduct(){
+        System.out.println("Нашето меню ");
+
+        System.out.println("------------------------------");
+        System.out.println("| Бургери | Пици | Палачинки |");
+        System.out.println("------------------------------");
+
+        System.out.println("Каква е вашата поръчка?");
+        String order = scan.nextLine();
+
+        if (order.equalsIgnoreCase("Бургери")){
+            //to do
+        }else if(order.equalsIgnoreCase("Пици")){
+            PizzaDialog dialog = new PizzaDialog();
+            dialog.choosePizza();
+        }else if(order.equalsIgnoreCase("Палачинки")){
+            PancakesDialog dialog = new PancakesDialog();
+            dialog.choosePancake();
+        }else{
+            System.out.println("Съжаляваме, но не предлагаме този продукт.");
+        }
+    }
     public void chooseLocation() {
         ArrayList<String> cities = new ArrayList<>();
         ArrayList<String []> restaurants = new ArrayList<>();
 
-        //Примерни стойности, защото нямаме достъп до базата
         cities.add("София");
         cities.add("Пловдив");
         cities.add("Правец");
@@ -34,27 +55,6 @@ public class ClientDialog {
         System.out.println("Моля изберете ресторант");
         String restaurant = scan.nextLine();
         System.out.println("Добре дошли в " + restaurant);
-
-        System.out.println("Нашето меню ");
-
-        System.out.println("------------------------------");
-        System.out.println("| Бургери | Пици | Палачинки |");
-        System.out.println("------------------------------");
-
-        System.out.println("Каква е вашата поръчка?");
-        String order = scan.nextLine();
-
-        if (order.equalsIgnoreCase("Бургери")){
-            //to do
-        }else if(order.equalsIgnoreCase("Пици")){
-            PizzaDialog dialog = new PizzaDialog();
-            dialog.choosePizza();
-        }else if(order.equalsIgnoreCase("Палачинки")){
-            PancakesDialog dialog = new PancakesDialog();
-            dialog.choosePancake();
-        }else{
-            System.out.println("Съжаляваме, но не предлагаме този продукт.");
-        }
 
     }
 }
