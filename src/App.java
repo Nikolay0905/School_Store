@@ -16,6 +16,7 @@ public class App {
             dialog.chooseLocation();
         }
 
+        System.out.println("Довиждане!");
       }
     }
 
