@@ -49,27 +49,22 @@ public class Pancakes extends Product {
         }
     }
 
-    public float chooseToppings(String[] chоsenToppings) {
-
-        for (int i = 0; i < chоsenToppings.length; i++) {
-            try {
-                String[] items = chоsenToppings[i].split(" ");
-                for (String curItem : items) {
-                    curItem = curItem.substring(0, 1).toUpperCase() +
-                            curItem.substring(1).toLowerCase();
-                    if (toppings.get(i).containsKey(curItem)) {
-                        price += toppings.get(i).get(curItem);
-                    } else {
-                        price += 0;
-                    }
+    public float choseToppings(String [] chosenToppings){
+        for (int i = 0; i < chosenToppings.length; i++) {
+            String [] items = chosenToppings[i].split(" ");
+            for (String curItem:items) {
+                curItem = curItem.substring(0,1).toUpperCase() +
+                        curItem.substring(1).toLowerCase();
+                if (toppings.get(i).containsKey(curItem)){
+                    price+=toppings.get(i).get(curItem);
+                }else {
+                    price += 0;
                 }
-            } catch (Exception e) {
-
             }
-            price += initialPrice;
         }
+        price += initialPrice;
         return price;
     }
- }
+}
 
 

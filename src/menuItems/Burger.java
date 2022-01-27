@@ -50,4 +50,27 @@ public class Burger extends Product{
             System.out.println("---------");
         }
     }
+
+    public float choseToppings(String[] chоsenToppings) {
+
+        for (int i = 0; i < chоsenToppings.length; i++) {
+            try {
+                String[] items = chоsenToppings[i].split(" ");
+                for (String curItem : items) {
+                    curItem = curItem.substring(0, 1).toUpperCase() +
+                            curItem.substring(1).toLowerCase();
+                    if (toppings.get(i).containsKey(curItem)) {
+                        price += toppings.get(i).get(curItem);
+                    } else {
+                        price += 0;
+                    }
+                }
+            } catch (Exception e) {
+
+            }
+        }
+        price += initialPrice;
+        return price;
+    }
 }
+
