@@ -17,7 +17,8 @@ public class ClientDialog {
         String order = scan.nextLine();
 
         if (order.equalsIgnoreCase("Бургери")){
-            //to do
+            BurgerDialog dialog = new BurgerDialog();
+            dialog.chooseBurger();
         }else if(order.equalsIgnoreCase("Пици")){
             PizzaDialog dialog = new PizzaDialog();
             dialog.choosePizza();

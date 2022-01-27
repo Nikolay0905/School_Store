@@ -14,7 +14,7 @@ public class PancakesDialog {
             System.out.println();
             Pancakes pancake = new Pancakes();
             pancake.printTopings();
-            System.out.println("Искате ли добавки за вашата палачинка?");
+            System.out.println("Моля добавете добавки за вашата палачинка?");
             String[] toppings = new String[4];
             System.out.println("Моля изберете кашкавал: ");
             toppings[0] = scan.nextLine();
@@ -24,7 +24,7 @@ public class PancakesDialog {
             toppings[2] = scan.nextLine();
             System.out.println("Моля изберете плодове: ");
             toppings[3] = scan.nextLine();
-            System.out.println("Цената за вашата палачинка е бъде: " + pancake.chooseToppings(toppings));
+            System.out.println("Цената за вашата палачинка е бъде: " + pancake.choseToppings(toppings));
             System.out.println("Това ли ще е вашата поръчка?");
             String ans = scan.next();
             ans.toLowerCase();
